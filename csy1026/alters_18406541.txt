@@ -1,0 +1,48 @@
+  /*
+ Anuj Budha Magar,18406541,CSY1026 DATABASE,anujbm@/roshan123
+ 02/MAY/2018, CSY1026, 2018
+ */
+ -- RunCommand EG  @E:\Anuj6541\csy1026\alters_18406541.txt
+ -- anujbm@/roshan123
+ ALTER TABLE sites MODIFY(
+ location VARCHAR2(40));
+ 
+ALTER TABLE trainers MODIFY(
+contact_no VARCHAR2(15) NOT NULL);
+
+--adding primary key (site_id)in table sites
+ALTER TABLE sites
+ADD CONSTRAINT pk_sites
+PRIMARY KEY (site_id);
+
+--adding primary key (subject_id)in table subject_areas
+ALTER TABLE subject_areas
+ADD CONSTRAINT pk_subject_areas
+PRIMARY KEY (subject_id);
+
+--adding primary key (trainer_id)in table trainers
+ALTER TABLE trainers
+ADD CONSTRAINT pk_trainers
+PRIMARY KEY (trainer_id);
+
+--adding primary key (student_id)in table students
+ALTER TABLE students
+ADD CONSTRAINT pk_students
+PRIMARY KEY (student_id);
+
+--deleting date_of_birth column from students table
+ALTER TABLE students DROP
+ (date_of_birth);
+
+ --adding column dob in students table
+ ALTER TABLE students ADD( 
+ dob DATE);
+ 
+ --adding car_reg column in trainers table
+ ALTER TABLE trainers ADD( 
+ car_reg NUMBER(10));
+ 
+--making unique key (car_reg)in table trainers
+ALTER TABLE trainers 
+ADD CONSTRAINT u_car_reg
+UNIQUE(car_reg);

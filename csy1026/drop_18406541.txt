@@ -1,0 +1,43 @@
+ /*
+ Anuj Budha Magar,18406541,CSY1026 DATABASE,anujbm@/roshan123
+ 02/MAY/2018, CSY1026, 2018
+ */
+ -- RunCommand EG  @E:\Anuj6541\csy1026\drop_18406541.txt
+ -- anujbm@/roshan123
+ 
+ 
+ --Code top drop table constraints only
+ -- to delete pk_constraint from sites table
+ 
+ ALTER TABLE sites
+ DROP CONSTRAINT pk_sites;
+ 
+ -- to delete pk_constraint from subject_areas table
+ ALTER TABLE subject_areas
+ DROP CONSTRAINT pk_subject_areas;
+ 
+ -- to delete pk_constraint from trainers table
+ ALTER TABLE trainers
+ DROP CONSTRAINT pk_trainers;
+
+ -- to delete pk_constraint from students table
+ ALTER TABLE students
+ DROP CONSTRAINT pk_students;
+ 
+ -- to delete (unique) u_constraint from trainers table
+ ALTER TABLE trainers
+ DROP CONSTRAINT u_car_reg;
+ 
+ 
+ DROP TABLE sites;
+ DROP TABLE subject_areas;
+ DROP TABLE trainers;
+ DROP TABLE students;
+ 
+ PURGE RECYCLEBIN;
+
+ 
+
+
+
+ 

@@ -1,0 +1,48 @@
+  /*
+ Anuj Budha Magar,18406541,CSY1026 DATABASE,anujbm@/roshan123
+ 02/MAY/2018, CSY1026, 2018
+ */
+ -- RunCommand EG  @E:\Anuj6541\csy1026\create_18406541.txt
+ -- anujbm@/roshan123
+-- creating  new tables
+ CREATE TABLE sites(
+ site_id NUMBER(5),		
+ site_name VARCHAR2(20));
+ 
+ -- adding a new column
+ --new column name and datatype
+ ALTER TABLE sites ADD( 
+ location VARCHAR2(30)); 
+ 
+ --creating table subject_areas
+CREATE TABLE subject_areas(
+subject_id NUMBER(5),
+subject_name VARCHAR2(20),
+description VARCHAR2(50));
+
+--to modify the size of description 
+ALTER TABLE subject_areas MODIFY(
+ description VARCHAR2(200));
+
+ --creating trainers table
+CREATE TABLE trainers(
+trainer_id NUMBER(8),
+t_firstname VARCHAR2(15),
+t_surname VARCHAR2(15),
+mentor_id NUMBER(8),
+contact_no VARCHAR2(15),
+rate NUMBER(3));
+
+--creating students table
+CREATE TABLE students(
+student_id      NUMBER(4),
+national_ins	VARCHAR2(10),
+student_fname   VARCHAR2(10),
+student_lname   VARCHAR2(12),
+street		VARCHAR2(10),
+city		VARCHAR2(15),
+country		VARCHAR2(15)DEFAULT 'ENGLAND',
+tel_no         	VARCHAR2(15) NOT NULL,
+gender       	VARCHAR2(1) ,
+date_of_birth  	DATE);
+
